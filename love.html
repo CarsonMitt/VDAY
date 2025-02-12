@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Invitation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            color: red;
+            animation: floatUp 2s ease-out forwards;
+        }
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: rgb(199, 20, 20); text-align: center; margin-bottom: 100px;">
+        VALENTINE DAY INVITATION
+    </h1>
+    
+    <h1 style="color: rgb(0, 0, 0); text-align: center;">
+        I love you!
+    </h1>
+    
+    <div style="text-align: center;">
+        <a href="https://imgbb.com/">
+            <img src="https://i.ibb.co/J9frbFm/milk-and-mocha-milk-mocha.gif" alt="milk-and-mocha-milk-mocha" border="0">
+        </a>
+        <br>
+        <button id="yc">MUAH!</button>
+    </div>
+
+    <script>
+        document.getElementById("yc").addEventListener("click", function(event) {
+            const heart = document.createElement("div");
+            heart.innerHTML = "❤️";
+            heart.classList.add("heart");
+
+            // Set random position near the button
+            const x = event.clientX + (Math.random() * 50 - 25);
+            const y = event.clientY - 20;
+
+            heart.style.left = `${x}px`;
+            heart.style.top = `${y}px`;
+
+            document.body.appendChild(heart);
+
+            // Remove heart after animation
+            setTimeout(() => {
+                heart.remove();
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
